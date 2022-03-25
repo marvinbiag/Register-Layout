@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "897583217064",
+    "project_id": "adcms-management-system",
+    "storage_bucket": "adcms-management-system.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:897583217064:android:1428410bd091e3aa5a459d",
+        "android_client_info": {
+          "package_name": "com.example.adcms"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "897583217064-tcgree85ajuf3uvaaokb96kpgs5hrgdk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDi4TXGYeiAG2hGvzob9-BARsFKmkekzc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "897583217064-tcgree85ajuf3uvaaokb96kpgs5hrgdk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

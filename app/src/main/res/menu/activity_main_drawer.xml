@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_dashboard"
+            android:icon="@drawable/ic_baseline_dashboard_24"
+            android:title="@string/menu_dashboard" />
+        <item
+            android:id="@+id/nav_myClinic"
+            android:icon="@drawable/ic_home_work"
+            android:title="@string/menu_myClinic" />
+        <item
+            android:id="@+id/nav_appointment"
+            android:icon="@drawable/ic_calendar_today"
+            android:title="@string/menu_appointment" />
+        <item
+            android:id="@+id/nav_patient"
+            android:icon="@drawable/ic_supervised_user"
+            android:title="@string/menu_patient" />
+        <item
+            android:id="@+id/nav_finance"
+            android:icon="@drawable/ic_monetization"
+            android:title="@string/menu_finance" />
+        <item
+            android:id="@+id/nav_policyPrivacy"
+            android:icon="@drawable/ic__lock"
+            android:title="@string/menu_policyPrivacy" />
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/ic_logout"
+            android:title="@string/menu_logout" />
+    </group>
+</menu>
