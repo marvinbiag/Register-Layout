@@ -3,23 +3,40 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/nav_dashboard">
 
     <fragment
-        android:id="@+id/nav_home"
-        android:name="com.example.adcms.ui.home.HomeFragment"
+        android:id="@+id/nav_dashboard"
+        android:name="com.example.adcms.ui.dashboard.DashboardFragment"
         android:label="@string/menu_dashboard"
-        tools:layout="@layout/fragment_home" />
-
+        tools:layout="@layout/fragment_dashboard" />
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.example.adcms.ui.gallery.GalleryFragment"
+        android:id="@+id/nav_myClinic"
+        android:name="com.example.adcms.ui.myclinic.MyclinicFragment"
         android:label="@string/menu_myClinic"
-        tools:layout="@layout/fragment_gallery" />
+        tools:layout="@layout/fragment_myclinic" />
+    <fragment
+        android:id="@+id/nav_appointment"
+        android:name="com.example.adcms.ui.appointment.AppointmentFragment"
+        android:label="@string/menu_appointment"
+        tools:layout="@layout/fragment_appointment" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.adcms.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_appointment"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_patient"
+        android:name="com.example.adcms.ui."
+        android:label="@string/menu_patient"
+        tools:layout="" />
+    <fragment
+        android:id="@+id/nav_finance"
+        android:name="com.example.adcms.ui.finance.FinanceFragment"
+        android:label="@string/menu_finance"
+        tools:layout="@layout/fragment_finance" />
+
+    <fragment
+        android:id="@+id/nav_policyPrivacy"
+        android:name="com.example.adcms.ui.privacypolicy.PolicyFragment"
+        android:label="@string/menu_finance"
+        tools:layout="@layout/fragment_policy" />
+
+
 </navigation>

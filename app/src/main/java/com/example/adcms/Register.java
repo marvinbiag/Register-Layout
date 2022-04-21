@@ -110,6 +110,7 @@ public class Register extends AppCompatActivity {
                                 public void onSuccess(Void unused) {
                                     Log.d(TAG, "onSuccess:user profile is created for" + userID);
 
+
                                 }
                             });
                             startActivity(new Intent(getApplicationContext(),Dashboard.class));

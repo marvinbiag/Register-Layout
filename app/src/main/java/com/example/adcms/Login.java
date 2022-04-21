@@ -60,7 +60,7 @@ public class Login extends AppCompatActivity {
                     mPassword.setError("Password is Week");
                     return;
                 }
-               // progressBar.setVisibility(View.VISIBLE);
+
 
                 //authenticate user
 

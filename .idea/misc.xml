@@ -4,12 +4,29 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/User/AndroidStudioProjects/ADCMS/app/src/main/res/drawable/ic_email.xml" value="0.21614583333333334" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/ADCMS/app/src/main/res/layout/activity_dashboard.xml" value="0.15" />
         <entry key="..\:/Users/User/AndroidStudioProjects/ADCMS/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Users/User/AndroidStudioProjects/ADCMS/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/User/AndroidStudioProjects/ADCMS/app/src/main/res/layout/activity_register.xml" value="0.25" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/ADCMS/app/src/main/res/layout/app_bar_dashboard.xml" value="0.15443840579710144" />
         <entry key="..\:/Users/User/AndroidStudioProjects/ADCMS/app/src/main/res/layout/content_dashboard.xml" value="0.18206521739130435" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/ADCMS/app/src/main/res/layout/fragment_appointment.xml" value="0.22" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/ADCMS/app/src/main/res/layout/fragment_dashboard.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/ADCMS/app/src/main/res/layout/fragment_finance.xml" value="0.15443840579710144" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/ADCMS/app/src/main/res/layout/fragment_gallery.xml" value="0.15443840579710144" />
         <entry key="..\:/Users/User/AndroidStudioProjects/ADCMS/app/src/main/res/layout/fragment_home.xml" value="0.18206521739130435" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/ADCMS/app/src/main/res/layout/fragment_item.xml" value="0.15443840579710144" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/ADCMS/app/src/main/res/layout/fragment_item_list.xml" value="0.15443840579710144" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/ADCMS/app/src/main/res/layout/fragment_item_list_patient.xml" value="0.15443840579710144" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/ADCMS/app/src/main/res/layout/fragment_item_patient.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/ADCMS/app/src/main/res/layout/fragment_myClinic.xml" value="0.15443840579710144" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/ADCMS/app/src/main/res/layout/fragment_myclinic.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/ADCMS/app/src/main/res/layout/fragment_policy.xml" value="0.15443840579710144" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/ADCMS/app/src/main/res/layout/fragment_slideshow.xml" value="0.15443840579710144" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/ADCMS/app/src/main/res/layout/fragment_view_model_appointment.xml" value="0.25" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/ADCMS/app/src/main/res/layout/nav_header_dashboard.xml" value="0.15443840579710144" />
         <entry key="..\:/Users/User/AndroidStudioProjects/ADCMS/app/src/main/res/menu/activity_main_drawer.xml" value="0.2" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/ADCMS/app/src/main/res/menu/dashboard.xml" value="0.2" />
       </map>
     </option>
   </component>
