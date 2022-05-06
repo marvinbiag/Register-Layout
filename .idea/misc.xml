@@ -3,11 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/User/AndroidStudioProjects/ADCMS/app/src/main/res/drawable/ic_baseline_date_range_24.xml" value="0.205" />
         <entry key="..\:/Users/User/AndroidStudioProjects/ADCMS/app/src/main/res/drawable/ic_email.xml" value="0.21614583333333334" />
         <entry key="..\:/Users/User/AndroidStudioProjects/ADCMS/app/src/main/res/layout/activity_dashboard.xml" value="0.15" />
         <entry key="..\:/Users/User/AndroidStudioProjects/ADCMS/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Users/User/AndroidStudioProjects/ADCMS/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/ADCMS/app/src/main/res/layout/activity_register.xml" value="0.25" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/ADCMS/app/src/main/res/layout/activity_register.xml" value="0.2" />
         <entry key="..\:/Users/User/AndroidStudioProjects/ADCMS/app/src/main/res/layout/app_bar_dashboard.xml" value="0.15443840579710144" />
         <entry key="..\:/Users/User/AndroidStudioProjects/ADCMS/app/src/main/res/layout/content_dashboard.xml" value="0.18206521739130435" />
         <entry key="..\:/Users/User/AndroidStudioProjects/ADCMS/app/src/main/res/layout/fragment_appointment.xml" value="0.22" />

@@ -7,7 +7,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
+import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,6 +22,9 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class Login extends AppCompatActivity {
     EditText mEmail,mPassword;
@@ -28,11 +32,33 @@ public class Login extends AppCompatActivity {
     TextView mCreateBtn,forgotTextLink;
     ProgressBar progressBar;
     FirebaseAuth fAuth;
+    FirebaseFirestore fStore;
+    private void checkUserAccessLevel(String uid){
+        DocumentReference df = fStore.collection("Users").document(uid);
+        // Extract data from document
+        df.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                Log.d("TAG", "onSuccess:" + documentSnapshot.getData());
+                // Identify the user access level
+
+                if (documentSnapshot.getString("isAdmin")!= null);
+                startActivity(new Intent(getApplicationContext(),Dashboard.class));
+
+            }
+
+
+        });
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        fAuth = FirebaseAuth.getInstance();
+        fStore = FirebaseFirestore.getInstance();
 
         mEmail = findViewById(R.id.Email);
         mPassword = findViewById(R.id.password);
@@ -48,16 +74,24 @@ public class Login extends AppCompatActivity {
                 String email = mEmail.getText().toString().trim();
                 String password = mPassword.getText().toString().trim();
 
-                if (TextUtils.isEmpty(email)){
-                    mEmail.setError("Email is Required");
+                if (email.isEmpty()){
+                    mEmail.setError("Field can't be empty");
+                    mEmail.requestFocus();
                     return;
                 }
-                if (TextUtils.isEmpty(password)){
+                if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+                    mEmail.setError("Invalid Email");
+                    mEmail.requestFocus();
+                    return;
+                }
+                if (password.isEmpty()){
                     mPassword.setError("Password is Required");
+                    mPassword.requestFocus();
                     return;
                 }
-                if (password.length() < 6){
+                if (password.length() < 8){
                     mPassword.setError("Password is Week");
+                    mPassword.requestFocus();
                     return;
                 }
 
@@ -69,7 +103,8 @@ public class Login extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
                             Toast.makeText(Login.this, "Logged in Successfully.", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(),Dashboard.class));
+
+                            //startActivity(new Intent(getApplicationContext(),Dashboard.class));
 
                         }else {
                             Toast.makeText(Login.this, "Error! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
@@ -81,6 +116,7 @@ public class Login extends AppCompatActivity {
 
             }
         });
+
 
         mCreateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,7 +133,7 @@ public class Login extends AppCompatActivity {
                 EditText resetMail = new EditText(view.getContext());
                 AlertDialog.Builder passwordResetDialog = new AlertDialog.Builder(view.getContext());
                 passwordResetDialog.setTitle("Reset Password?");
-                passwordResetDialog.setMessage("Enter Your Email To Recived Reset Link.");
+                passwordResetDialog.setMessage("Enter Your Email To Received Reset Link.");
                 passwordResetDialog.setView(resetMail);
 
                 passwordResetDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {

@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -28,7 +29,7 @@ import java.util.Map;
 public class Register extends AppCompatActivity {
     public static final String TAG = null;
     public static final String msg = null;
-    EditText mFirstName,mEmail,mPassword,mPhone,mLastName,mAge,mGender,mAddress;
+    EditText mFirstName,mEmail,mPassword,mConPassword,mPhone,mLastName,mAge,mGender,mAddress;
     Button mRegisterBtn;
     TextView mLoginBtn;
     FirebaseAuth fAuth;
@@ -44,6 +45,7 @@ public class Register extends AppCompatActivity {
         mFirstName = findViewById(R.id.firstname);
         mEmail = findViewById(R.id.Email);
         mPassword = findViewById(R.id.password);
+        mConPassword = findViewById(R.id.password2);
         mPhone = findViewById(R.id.Phone);
         mLastName = findViewById(R.id.lastname);
         mAge = findViewById(R.id.age);
@@ -67,6 +69,7 @@ public class Register extends AppCompatActivity {
             public void onClick(View view) {
                 String email = mEmail.getText().toString().trim();
                 String password = mPassword.getText().toString().trim();
+                String password2 = mConPassword.getText().toString().trim();
                 String firstName = mFirstName.getText().toString();
                 String phone = mPhone.getText().toString();
                 String lastname = mLastName.getText().toString();
@@ -74,18 +77,57 @@ public class Register extends AppCompatActivity {
                 String gender = mGender.getText().toString();
                 String address = mAddress.getText().toString();
 
-                if (TextUtils.isEmpty(email)){
-                    mEmail.setError("Email is Required");
+                if (firstName.isEmpty()){
+                    mFirstName.setError("First Name is required");
+                    mFirstName.requestFocus();
                     return;
                 }
-                if (TextUtils.isEmpty(password)){
+                if (lastname.isEmpty()){
+                    mLastName.setError("Last Name is required");
+                    mLastName.requestFocus();
+                    return;
+                }
+
+                if (email.isEmpty()){
+                    mEmail.setError("Email Address is Required");
+                    mEmail.requestFocus();
+                    return;
+                }
+                if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+                    mEmail.setError("Invalid Email");
+                    mEmail.requestFocus();
+                    return;
+                }
+                if (password.isEmpty()){
                     mPassword.setError("Password is Required");
+                    mPassword.requestFocus();
                     return;
                 }
-                if (password.length() < 6){
+                if (password.length() < 8){
                     mPassword.setError("Password is Week");
+                    mPassword.requestFocus();
                     return;
                 }
+                if (password2.isEmpty()){
+                    mConPassword.setError("Password Confirmation is Required");
+                    mConPassword.requestFocus();
+                    return;
+                }
+                if (!password.equals(password2)) {
+                    mConPassword.setError("Password doesn't match");
+                }
+                if (phone.isEmpty()){
+                    mPhone.setError("Phone Number is required");
+                    mPhone.requestFocus();
+                    return;
+                }
+                if (address.isEmpty()){
+                    mAddress.setError("Address is required");
+                    mAddress.requestFocus();
+                    return;
+                }
+
+
                 progressBar.setVisibility(View.VISIBLE);
 
                 //register the user in firebase
@@ -105,15 +147,18 @@ public class Register extends AppCompatActivity {
                             user.put("Age",age);
                             user.put("Gender",gender);
                             user.put("Address",address);
+                            //specify if user is admin
+                            user.put("isUser","1");
+
                             documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void unused) {
                                     Log.d(TAG, "onSuccess:user profile is created for" + userID);
 
-
                                 }
                             });
                             startActivity(new Intent(getApplicationContext(),Dashboard.class));
+                            finish();
 
                         }else {
                             Toast.makeText(Register.this, "Error! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
